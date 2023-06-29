@@ -10,6 +10,7 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.qa.base.TestBase;
+import com.qa.vo.BordVO;
 
 public class RestClient extends TestBase{
 	
@@ -45,9 +46,11 @@ public class RestClient extends TestBase{
 		return closebaleHttpResponse;
 			
 		}*/
-public HttpResponse<String> postRequest(String url,Map<String,String> headerMap) throws ClientProtocolException, IOException, UnirestException, ParseException{
+public HttpResponse<String> postRequest(String url,BordVO bordVO) throws ClientProtocolException, IOException, UnirestException, ParseException{
+	
 	HttpResponse<String> httpResponse = Unirest.post(url)
-			  .headers(headerMap)
+			  .queryString("name",bordVO.getName())
+			  .queryString("desc",bordVO.getDesc())
 			  .queryString("key", key)
 			  .queryString("token", token)
 			  .asString();

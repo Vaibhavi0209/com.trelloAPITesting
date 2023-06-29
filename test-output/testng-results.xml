@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1876" started-at="2023-06-28T21:53:09Z" finished-at="2023-06-28T21:53:11Z">
+  <suite name="Default suite" duration-ms="2575" started-at="2023-06-29T14:14:51Z" finished-at="2023-06-29T14:14:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1876" started-at="2023-06-28T21:53:09Z" finished-at="2023-06-28T21:53:11Z">
-      <class name="com.qa.tests.GetApiTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.GetApiTest@6fffcba5]" name="setUp" is-config="true" duration-ms="11" started-at="2023-06-28T17:53:09Z" finished-at="2023-06-28T17:53:09Z">
+    <test name="Default test" duration-ms="2575" started-at="2023-06-29T14:14:51Z" finished-at="2023-06-29T14:14:53Z">
+      <class name="com.qa.tests.postAPITest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.postAPITest@3834d63f]" name="setUp" is-config="true" duration-ms="22" started-at="2023-06-29T10:14:51Z" finished-at="2023-06-29T10:14:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getAPITest()[pri:0, instance:com.qa.tests.GetApiTest@6fffcba5]" name="getAPITest" duration-ms="1847" started-at="2023-06-28T17:53:09Z" finished-at="2023-06-28T17:53:11Z">
+        <test-method status="PASS" signature="postAPITest()[pri:0, instance:com.qa.tests.postAPITest@3834d63f]" name="postAPITest" duration-ms="2524" started-at="2023-06-29T10:14:51Z" finished-at="2023-06-29T10:14:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAPITest -->
-      </class> <!-- com.qa.tests.GetApiTest -->
+        </test-method> <!-- postAPITest -->
+      </class> <!-- com.qa.tests.postAPITest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
