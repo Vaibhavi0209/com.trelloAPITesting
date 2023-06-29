@@ -8,6 +8,15 @@ public class BordVO {
 	private String id;
 	private String name;
 	private String desc;
+	
+	
+	public BordVO() {
+		super();
+	}
+	public BordVO(String id) {
+		super();
+		this.id = id;
+	}
 	public String getId() {
 		return id;
 	}

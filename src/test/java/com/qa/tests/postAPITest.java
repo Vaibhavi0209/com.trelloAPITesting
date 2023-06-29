@@ -32,13 +32,14 @@ public class postAPITest extends TestBase{
 	
 	@BeforeMethod
 	public void setUp(){
+		System.out.println("****************** postAPITest *****************");
 		url = prop.getProperty("url") +""+ prop.getProperty("serviceURL");
 		System.out.println("url : "+url);
 		
 	}
 	
-	@Test(priority = 0)
-	public void postAPITest() throws ClientProtocolException, IOException, UnirestException, ParseException{
+	@Test(priority = 1)
+	public void postAPITest() throws ClientProtocolException, IOException, UnirestException{
 		restClient = new RestClient();
 		
 		
@@ -59,14 +60,12 @@ public class postAPITest extends TestBase{
 		httpResponse = restClient.postRequest(url, bordVO);
 		
 		int statusCode = httpResponse.getStatus();
-		System.out.println("statusCode : "+statusCode);
+		System.out.println("Post statusCode : "+statusCode);
 		
 		Assert.assertEquals(statusCode, HttpStatus.SC_OK,"Status code is not 200");
 		
 		String responseBody = httpResponse.getBody().toString();
 		System.out.println("responseJson : "+responseBody);
-		JSONParser parse = new JSONParser();
-		JSONObject data_obj = (JSONObject) parse.parse(responseBody);
 		
 		BordVO bordVO2 = mapper.readValue(responseBody, BordVO.class);
 		System.out.println(bordVO2);

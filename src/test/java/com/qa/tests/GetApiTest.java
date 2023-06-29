@@ -22,7 +22,7 @@ import com.qa.client.RestClient;
 public class GetApiTest extends TestBase{
 
 	String url;
-	String bordId = "649c4944abcfa2fd17116c2f";
+	String bordId = "649da6ed8275f4bc91d82606";
 	RestClient restClient;
 	HttpResponse<String> httpResponse;
 	//CloseableHttpResponse closebaleHttpResponse;
@@ -33,18 +33,19 @@ public class GetApiTest extends TestBase{
 	
 	@BeforeMethod
 	public void setUp(){
+		System.out.println("****************** GetApiTest *****************");
 		url = prop.getProperty("url") +""+ prop.getProperty("serviceURL")+""+bordId;
 		System.out.println("url : "+url);
 		
 	}
 	
-	@Test
+	@Test(priority = 0)
 	public void getAPITest()throws ClientProtocolException, IOException, UnirestException, ParseException {
 		restClient = new RestClient();
 		httpResponse = restClient.getResponse(url);
 		
 		int statusCode = httpResponse.getStatus();
-		System.out.println("statusCode : "+statusCode);
+		System.out.println("Get statusCode : "+statusCode);
 		Assert.assertEquals(statusCode, HttpStatus.SC_OK,"Status code is not 200");
 		
 		String responseBody = httpResponse.getBody().toString();
@@ -57,11 +58,11 @@ public class GetApiTest extends TestBase{
 			System.out.println(key +" = "+data_obj.get(key));
 		}*/
 		
-		Assert.assertEquals(data_obj.get("name"), "Bord 380","Bord name is not correct");
+		Assert.assertEquals(data_obj.get("name"), "Bord 283","Bord name is not correct");
 		Assert.assertEquals(data_obj.get("id"), bordId,"Wrong Bord id");
 		Assert.assertEquals(data_obj.get("desc"), "This is Demo bord for Postman","Wrong Description");
 		Assert.assertEquals(data_obj.get("pinned"), false,"Bord pinned status true");
-		Assert.assertEquals(data_obj.get("url"), "https://trello.com/b/JamlsSAq/bord-380","Wrong Bord URL");
+		Assert.assertEquals(data_obj.get("url"), "https://trello.com/b/IV5cqo8z/bord-283","Wrong Bord URL");
 		
 		//String permissionLevel = TestUtils.getValueByJPath(data_obj, "/prefs/permissionLevel");
 		Map prefs = (Map) data_obj.get("prefs");

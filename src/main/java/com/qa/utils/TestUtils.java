@@ -3,6 +3,8 @@ package com.qa.utils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import com.qa.vo.BordVO;
+
 public class TestUtils {
 
 	public static String getValueByJPath(JSONObject responsejson, String jpath){
